@@ -37,8 +37,6 @@ public class LoginController implements Initializable {
     private TextField tfPassword;
     
     @FXML
-    private Text GoodStats;
-    @FXML
     private Text BadStats;
     
     private Stage stage;
@@ -69,7 +67,6 @@ public class LoginController implements Initializable {
                 stage.show();
             }
             else {
-                GoodStats.setOpacity(0);
                 BadStats.setOpacity(1);
             }
     }

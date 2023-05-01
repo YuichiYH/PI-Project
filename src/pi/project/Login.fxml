@@ -9,7 +9,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pi.project.LoginController">
+
+<AnchorPane id="AnchorPane" maxHeight="400.0" maxWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pi.project.LoginController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
          <image>
@@ -30,7 +31,6 @@
       <Button layoutX="270.0" layoutY="259.0" mnemonicParsing="false" onAction="#onClickEnter" text="Entrar" />
       <Text fill="WHITE" layoutX="193.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Não possui uma conta?" />
       <Text fill="#0072ab" layoutX="328.0" layoutY="321.0" onMouseClicked="#clickRegister" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastre-se" />
-      <Text fx:id="GoodStats" fill="LIME" layoutX="213.0" layoutY="128.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login Realizado com sucesso!" textAlignment="CENTER" />
       <Text fx:id="BadStats" fill="RED" layoutX="217.0" layoutY="128.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha ou Usuario incorretos" textAlignment="CENTER" />
    </children>
 </AnchorPane>
