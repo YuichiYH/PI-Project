@@ -27,4 +27,6 @@ To do:
     - ❌ Marcar Consulta
         - ❌ Paciente
         - ❌ Atendente
+    - ❌ Tela médico
+    - ❌ Check in
     - ✔ Login
