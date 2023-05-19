@@ -39,27 +39,20 @@ public class MainviewController implements Initializable {
 
     @FXML
     public void onMenuItemDepartmentAction() {
-       
        loadView("/gui/Funcionario.fxml");
-         
     }
+    
     @FXML
     public void onMenuItemAboutAction() {
-      
-       loadView("/gui/AgendaCalendar.fxml");
-       
+       loadView("/gui/Checkin.fxml");
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-        
     }
 
     private synchronized void loadView(String absoluteName){
-        
         try{
-        
             FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
             VBox newVBox = loader.load();
             
@@ -72,12 +65,9 @@ public class MainviewController implements Initializable {
             mainVBox.getChildren().clear();
             mainVBox.getChildren().add(mainMenu);
             mainVBox.getChildren().addAll(newVBox.getChildren());
-            
-            
         }
         catch(IOException e){
             alerts.showAlert("IO Exception", "ERROR Loading View", e.getMessage(), Alert.AlertType.ERROR);
         }
-
     }
 }
