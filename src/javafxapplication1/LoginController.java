@@ -79,16 +79,22 @@ public class LoginController implements Initializable {
         
         conn = DB.getConnection();
         
-        st = conn.prepareStatement("select email, senha, cargo from pessoa where email = ?");
-        st.setString(1, tfUser.getText());
+        try{
         
-        rs = st.executeQuery();
+            st = conn.prepareStatement("select email, senha, cargo from pessoa where email = ?");
+            st.setString(1, tfUser.getText());
 
-        rs.next();
-        usuario = rs.getString("email");
-        senha = rs.getString("senha");
-        cargo = rs.getString("cargo");
-        
+            rs = st.executeQuery();
+
+            rs.next();
+            usuario = rs.getString("email");
+            senha = rs.getString("senha");
+            cargo = rs.getString("cargo");
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+            BadStats.setOpacity(1);
+        }
         
         if (usuario.equals(tfUser.getText()) && senha.equals(tfPassword.getText())){
             try {
