@@ -1,16 +1,43 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
+ */
 package gui;
 
+import db.DB;
+import gui.util.ControlFX.textfield.TextFields;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
+/**
+ * FXML Controller class
+ *
+ * @author Pc
+ */
 public class CheckinController implements Initializable {
 
+    @FXML
+    private TextField nameId;
+    @FXML
+    private TextField cpfId;
+    @FXML
+    private TextField rgId;
+    @FXML
+    private TextField codId;
     @FXML
     private Label medico1;
     @FXML
@@ -30,21 +57,32 @@ public class CheckinController implements Initializable {
     @FXML
     private Label medico3;
 
+    private Connection conn = DB.getConnection();
+    private PreparedStatement st;
+    private ResultSet rs;
+    private int rows;
     
+    private List<String> autoComplete = new ArrayList<String>();
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        
-        
-        
-        
-    }    
+        try {
+            rs = conn.prepareStatement("SELECT name FROM people ORDER BY name ASC").executeQuery();
+            
+            while(rs.next()){
+                autoComplete.add(rs.getString("name"));
+            }
+            
+            TextFields.bindAutoCompletion(nameId, autoComplete);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(CheckinController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     @FXML
     private void OnBuscaAction(ActionEvent event) {
-        
-        
     }
 
     @FXML
