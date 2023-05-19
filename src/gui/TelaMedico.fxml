@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TabPane prefHeight="660.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Informações Paciente">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="29.0" prefWidth="25.0">
+                     <children>
+                        <VBox layoutX="6.0" layoutY="47.0" prefHeight="559.0" prefWidth="987.0" style="-fx-border-color: #e6e6e6;">
+                           <children>
+                              <Label prefHeight="21.0" prefWidth="119.0" text="Data da Abertura:">
+                                 <padding>
+                                    <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label prefHeight="37.0" prefWidth="184.0" text="Nome Completo Do Paciente: ">
+                                 <padding>
+                                    <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label prefHeight="21.0" prefWidth="119.0" text="Data Nascimento:">
+                                 <padding>
+                                    <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label prefHeight="21.0" prefWidth="119.0" text="Sexo:">
+                                 <padding>
+                                    <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label prefHeight="37.0" prefWidth="131.0" text="Alergias:">
+                                 <padding>
+                                    <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Label layoutX="14.0" prefHeight="41.0" prefWidth="200.0" text="Prontuario Médico Paciente">
+                           <padding>
+                              <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                           </padding>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Receita Médica">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HTMLEditor htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" layoutX="-3.0" layoutY="-1.0" prefHeight="619.0" prefWidth="1006.0" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <ToolBar prefHeight="73.0" prefWidth="1000.0" style="-fx-background-color: #f0f0f0;">
+        <items>
+          <Button mnemonicParsing="false" text="Finalizar Consulta">
+               <font>
+                  <Font size="13.0" />
+               </font></Button>
+        </items>
+      </ToolBar>
+   </children>
+</VBox>
