@@ -106,6 +106,12 @@ public class PacienteLoginController implements Initializable {
         Constraints.setTextFieldDouble(numberid);
         Constraints.setTextFieldDouble(telid);
         Constraints.setTextFieldDouble(passwordId);
+        
+        Constraints.setTextFieldMaxLength(nome, 50);
+        Constraints.setTextFieldMaxLength(cfpid, 11);
+        Constraints.setTextFieldMaxLength(rgid, 7);
+        Constraints.setTextFieldMaxLength(telid, 11);
+        Constraints.setTextFieldMaxLength(passwordId, 20);
     }    
 
     @FXML
@@ -160,7 +166,6 @@ public class PacienteLoginController implements Initializable {
             
             rows = st.executeUpdate();
             
-            conn.close();
             
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 

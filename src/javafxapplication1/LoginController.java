@@ -89,7 +89,6 @@ public class LoginController implements Initializable {
         senha = rs.getString("senha");
         cargo = rs.getString("cargo");
         
-        conn.close();
         
         if (usuario.equals(tfUser.getText()) && senha.equals(tfPassword.getText())){
             try {
@@ -101,7 +100,6 @@ public class LoginController implements Initializable {
             scrollPane.setFitToHeight(true);
             scrollPane.setFitToWidth(true);
 
-            conn.close();
             scene = new Scene(scrollPane);
             stage.setTitle("Cadastro Paciente");
             stage.setScene(scene);

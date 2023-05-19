@@ -93,7 +93,11 @@ public class PacienteController implements Initializable {
         Constraints.setTextFieldDouble(telid);
         Constraints.setTextFieldDouble(passwordId);
         
-        
+        Constraints.setTextFieldMaxLength(nome, 50);
+        Constraints.setTextFieldMaxLength(cfpid, 11);
+        Constraints.setTextFieldMaxLength(rgid, 7);
+        Constraints.setTextFieldMaxLength(telid, 11);
+        Constraints.setTextFieldMaxLength(passwordId, 20);
         
   }
 
@@ -139,8 +143,6 @@ public class PacienteController implements Initializable {
         st.setString(11, "P");
 
         rows = st.executeUpdate();
-
-        conn.close();
     }
 
     @FXML
