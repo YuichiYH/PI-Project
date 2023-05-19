@@ -7,7 +7,7 @@ Change DB.proprieties for your User, password and local DataBank
 To do:
 
 - ❌ Comentar o código
-- ❌ Criar as seguintes telas:
+- ❌ Criar as seguintes telas
     - ❌ Marcar consulta
         - ❌ Fazer FXML
         - ❌ Fazer Controler
