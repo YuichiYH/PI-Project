@@ -46,7 +46,7 @@
             <Label layoutX="200.0" layoutY="140.0" prefHeight="21.0" prefWidth="113.0" text="Orgão Expeidor" />
             <TextField fx:id="orgaoid" layoutX="200.0" layoutY="161.0" promptText="SP" />
             <Label layoutX="733.0" layoutY="36.0" prefHeight="21.0" prefWidth="113.0" text="SEXO" />
-            <TextField fx:id="dataid" layoutX="7.0" layoutY="109.0" promptText="00/00/0000" />
+            <DatePicker fx:id="dataid" layoutX="7.0" layoutY="109.0" prefHeight="25.0" prefWidth="149.0" promptText="00/00/0000" />
             <Label layoutX="7.0" layoutY="88.0" prefHeight="21.0" prefWidth="122.0" text="Data Nascimento" />
             <RadioButton fx:id="mascid" layoutX="733.0" layoutY="62.0" mnemonicParsing="false" onAction="#onRadioSex" text="Masculino">
                <toggleGroup>

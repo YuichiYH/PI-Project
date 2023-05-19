@@ -159,8 +159,6 @@ public class FuncionarioController implements Initializable {
         st.setString(11, checkCargo(groupCargo));
 
         rows = st.executeUpdate();
-
-        conn.close();
     }
     private String checkSex(ToggleGroup radioSex){
         return(radioSex.getSelectedToggle() == mascid ? "M" : "F");

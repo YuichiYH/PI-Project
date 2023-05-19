@@ -81,7 +81,7 @@
             <Button fx:id="botao" layoutX="900.0" layoutY="600.0" mnemonicParsing="false" onAction="#onBotaoAction" text="Cadastrar " />
             <Label layoutX="201.0" layoutY="244.0" text="Senha" />
             <PasswordField fx:id="passwordId" layoutX="201.0" layoutY="267.0" promptText="******" />
-            <DatePicker fx:id="dataid" layoutX="2.0" layoutY="109.0" prefHeight="25.0" prefWidth="149.0" />
+            <DatePicker fx:id="dataid" layoutX="7.0" layoutY="109.0" prefHeight="25.0" prefWidth="149.0" />
          </children>
       </Pane>
    </children>
