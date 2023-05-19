@@ -5,7 +5,6 @@
 package gui;
 
 import db.DB;
-import gui.util.ControlFX.textfield.TextFields;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -60,29 +59,14 @@ public class CheckinController implements Initializable {
     private Connection conn = DB.getConnection();
     private PreparedStatement st;
     private ResultSet rs;
-    private int rows;
-    
-    private List<String> autoComplete = new ArrayList<String>();
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-        try {
-            rs = conn.prepareStatement("SELECT name FROM people ORDER BY name ASC").executeQuery();
-            
-            while(rs.next()){
-                autoComplete.add(rs.getString("name"));
-            }
-            
-            TextFields.bindAutoCompletion(nameId, autoComplete);
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(CheckinController.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
 
     @FXML
     private void OnBuscaAction(ActionEvent event) {
+        
     }
 
     @FXML
