@@ -53,8 +53,9 @@ public class LoginController implements Initializable {
     private String cargo;
     
     private FXMLLoader loader;
-    ScrollPane scrollPane;
-    VBox vbox;
+    private AnchorPane anchorPane;
+    private ScrollPane scrollPane;
+    private VBox vbox;
     /**
      * Initializes the controller class.
      */
@@ -105,15 +106,14 @@ public class LoginController implements Initializable {
                 case "M":
                     loader = new FXMLLoader(getClass().getResource("/gui/TelaMedico.fxml"));
                     vbox = loader.load();
+                    
                     scene = new Scene(vbox);
                     break;
                 case "P":
-                    loader = new FXMLLoader(getClass().getResource("/gui/Main.fxml"));
-                    scrollPane = loader.load();
-
-                    scrollPane.setFitToHeight(true);
-                    scrollPane.setFitToWidth(true);
-                    scene = new Scene(scrollPane);
+                    loader = new FXMLLoader(getClass().getResource("/gui/AgendaCalendar.fxml"));
+                    anchorPane = loader.load();
+                    
+                    scene = new Scene(anchorPane);
                     break;
                 case "A":
                     loader = new FXMLLoader(getClass().getResource("/gui/Main.fxml"));
