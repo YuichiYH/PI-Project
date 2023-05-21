@@ -23,7 +23,7 @@
                         </Menu>
                         <Menu mnemonicParsing="false" text="Agendar Consulta">
                             <items>
-                                <MenuItem fx:id="menuItemAbout" mnemonicParsing="false" onAction="#onMenuItemAboutAction" text="About" />
+                                <MenuItem fx:id="menuItemAbout" mnemonicParsing="false" onAction="#onMenuItemAboutAction" text="Check In" />
                             </items>
                         </Menu>
                     </menus>

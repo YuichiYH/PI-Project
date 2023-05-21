@@ -52,7 +52,9 @@ public class LoginController implements Initializable {
     private String senha;
     private String cargo;
     
-    
+    private FXMLLoader loader;
+    ScrollPane scrollPane;
+    VBox vbox;
     /**
      * Initializes the controller class.
      */
@@ -99,15 +101,32 @@ public class LoginController implements Initializable {
         if (usuario.equals(tfUser.getText()) && senha.equals(tfPassword.getText())){
             try {
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            switch(cargo){
+                case "M":
+                    loader = new FXMLLoader(getClass().getResource("/gui/TelaMedico.fxml"));
+                    vbox = loader.load();
+                    scene = new Scene(vbox);
+                    break;
+                case "P":
+                    loader = new FXMLLoader(getClass().getResource("/gui/Main.fxml"));
+                    scrollPane = loader.load();
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/Main.fxml"));
-            ScrollPane scrollPane = loader.load();
+                    scrollPane.setFitToHeight(true);
+                    scrollPane.setFitToWidth(true);
+                    scene = new Scene(scrollPane);
+                    break;
+                case "A":
+                    loader = new FXMLLoader(getClass().getResource("/gui/Main.fxml"));
+                    scrollPane = loader.load();
 
-            scrollPane.setFitToHeight(true);
-            scrollPane.setFitToWidth(true);
-
-            scene = new Scene(scrollPane);
-            stage.setTitle("Cadastro Paciente");
+                    scrollPane.setFitToHeight(true);
+                    scrollPane.setFitToWidth(true);
+                    scene = new Scene(scrollPane);
+                    break;
+            }
+            
+            
+            stage.setTitle("Tela Principal");
             stage.setScene(scene);
             stage.show();
             }
