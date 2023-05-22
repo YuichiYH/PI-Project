@@ -5,6 +5,7 @@
  */
 package gui;
 
+import java.io.IOException;
 import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -16,11 +17,16 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -211,7 +217,13 @@ public class AgendaController implements Initializable {
     
     Hashtable<String, String> agenda = new Hashtable<String, String>(); 
 
-    Text[] dayDesc, dayNumber;
+    Text[] dayDesc, dayNumber;    
+    
+    private Stage stage;
+    private static Scene scene;
+    
+    private FXMLLoader loader;
+    private AnchorPane anchorPane;
 
 
     /**
@@ -237,7 +249,7 @@ public class AgendaController implements Initializable {
     }    
 
     @FXML
-    private void Add_Consulta(ActionEvent event) throws ParseException {
+    private void Add_Consulta(ActionEvent event) throws ParseException, IOException {
         Calendar c = Calendar.getInstance();
         c.setTime(new SimpleDateFormat("dd-M-yyyy").parse("01-" + (month+1) + "-"+ year));
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -253,6 +265,14 @@ public class AgendaController implements Initializable {
             ExamDate.setValue(null);
             ExamName.setText(null);
         }
+        
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/Pagamento.fxml"));
+        AnchorPane newPane = loader.load();
+        scene = new Scene(newPane);
+        stage.setTitle("Pagamento");
+        stage.setScene(scene);
+        stage.show();
         
         UpdateDays(month, year);
     }
