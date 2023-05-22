@@ -8,7 +8,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -68,7 +67,7 @@ public class LoginController implements Initializable {
     private void clickRegister(MouseEvent event) throws IOException {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("PacienteLogin.fxml"));
+        loader = new FXMLLoader(getClass().getResource("PacienteLogin.fxml"));
         VBox newVBox = loader.load();
         
         scene = new Scene(newVBox);

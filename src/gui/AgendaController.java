@@ -247,7 +247,6 @@ public class AgendaController implements Initializable {
             BadStats.setOpacity(0);
             agenda.put(ExamDate.getValue().toString(), ExamName.getText());
             
-            Month.setText("" + agenda.containsKey(sdf.format(c.getTime())));
         }
         else{
             BadStats.setOpacity(1);
