@@ -15,7 +15,7 @@
          <children>
             <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#9c9c9c" height="373.0" layoutX="14.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="208.0" />
             <Text layoutX="80.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Agendamento" />
-            <Button alignment="CENTER" layoutX="63.0" layoutY="348.0" mnemonicParsing="false" onAction="#Add_Consulta" text="Agendar consulta" />
+            <Button alignment="CENTER" layoutX="101.0" layoutY="348.0" mnemonicParsing="false" onAction="#Add_Consulta" text="Agendar consulta" />
             <Group layoutX="-3.0" layoutY="92.0">
                <children>
                   <TextField fx:id="ExamName" layoutX="31.0" layoutY="63.0" prefHeight="25.0" prefWidth="174.0" />
@@ -29,6 +29,7 @@
                </children>
             </Group>
             <Text fx:id="BadStats" fill="RED" layoutX="39.0" layoutY="76.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precisa de um nome ou data" textAlignment="CENTER" />
+            <Button alignment="CENTER" layoutX="28.0" layoutY="348.0" mnemonicParsing="false" onAction="#onActionLogout" text="Logout" />
          </children>
       </Group>
       <Group>

@@ -9,9 +9,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.TelaMedicoController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.TelaMedicoController">
    <children>
-      <TabPane prefHeight="660.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="660.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Informações Paciente">
             <content>
@@ -68,12 +68,17 @@
           </Tab>
         </tabs>
       </TabPane>
-      <ToolBar prefHeight="73.0" prefWidth="1000.0" style="-fx-background-color: #f0f0f0;">
+      <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="73.0" prefWidth="1000.0" style="-fx-background-color: #f0f0f0;">
         <items>
           <Button mnemonicParsing="false" text="Finalizar Consulta">
                <font>
                   <Font size="13.0" />
                </font></Button>
+            <Button mnemonicParsing="false" onAction="#onLogoutAction" text="Logout">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
         </items>
       </ToolBar>
    </children>

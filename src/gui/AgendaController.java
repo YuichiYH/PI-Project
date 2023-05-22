@@ -276,6 +276,19 @@ public class AgendaController implements Initializable {
         
         UpdateDays(month, year);
     }
+    
+    @FXML
+    private void onActionLogout(ActionEvent event) throws IOException{
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        
+        loader = new FXMLLoader(getClass().getResource("/javafxapplication1/Login.fxml"));
+        AnchorPane newPane = loader.load();
+        
+        scene = new Scene(newPane);
+        stage.setTitle("Cadastro Paciente");
+        stage.setScene(scene);
+        stage.show();
+    }
 
     @FXML
     private void MinusMonth(MouseEvent event) {
